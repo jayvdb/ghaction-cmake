@@ -53,5 +53,5 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
-          tags: ${{ github.repository }}:${{ steps.version.outputs.version_docker_ci }}
+          tags: ${{ github.repository }}:0.16-nvidia
 

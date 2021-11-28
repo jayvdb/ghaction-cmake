@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM nvcr.io/nvidia/deepstream:6.0-devel
 
 # install debian packages:
 ENV DEBIAN_FRONTEND=noninteractive
@@ -30,3 +30,5 @@ RUN sed -i '/pam_rootok.so$/aauth sufficient pam_permit.so' /etc/pam.d/su
 
 ADD entrypoint /usr/local/bin/entrypoint
 CMD ["/usr/local/bin/entrypoint"]
+
+RUN apt-get install -y --no-install-recommends libjson-c-dev
