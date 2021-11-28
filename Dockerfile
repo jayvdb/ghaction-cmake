@@ -23,6 +23,16 @@ RUN set -e -x; \
         # base system (su)
         util-linux
 
+RUN apt-get install -y --no-install-recommends \
+        libglib2.0-dev \
+        libgstrtspserver-1.0-dev \
+        libgtest-dev \
+        libgmock-dev \
+        libpcre2-dev  \
+        libpoco-dev \
+        libpocofoundation70 \
+        rapidjson-dev
+
 # ctest -D ExperimentalMemCheck; may not work in all architectures
 RUN apt-get install -y --no-install-recommends valgrind || true
 
