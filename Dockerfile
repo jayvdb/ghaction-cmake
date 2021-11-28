@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:sid
 
 # install debian packages:
 ENV DEBIAN_FRONTEND=noninteractive
