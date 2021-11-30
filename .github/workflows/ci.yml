@@ -16,7 +16,7 @@ jobs:
             - clang-tidy
             - clang-sanitizer-address
             - clang-sanitizer-memory
-            - clang-sanitizer-undefined
+            # clang-sanitizer-undefined fails on gst-interpipe
             - clang-sanitizer-dataflow
             - clang-sanitizer-safe-stack
             - valgrind
