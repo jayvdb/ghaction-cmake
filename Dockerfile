@@ -32,7 +32,7 @@ RUN apt-get install -y --no-install-recommends \
         libpocofoundation70 \
         rapidjson-dev
 
-RUn apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
         autoconf \
         automake autotools-dev \
         libtool \
@@ -52,6 +52,24 @@ RUN mkdir /work && \
 
 # ctest -D ExperimentalMemCheck; may not work in all architectures
 RUN apt-get install -y --no-install-recommends valgrind || true
+
+RUN apt-get install -y --no-install-recommends \
+        wget unzip
+
+# The .so must be located beside the bin
+RUN mkdir /work && \
+    cd /work && \
+    wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip && \
+    unzip build-wrapper-linux-x86.zip && \
+    cd build-wrapper-linux-x86 && \
+    ls -al && \
+    mv build-wrapper-linux-x86-64 /usr/bin && \
+    mv libinterceptor-haswell.so libinterceptor-i686.so libinterceptor-x86_64.so /usr/bin/ && \
+    ldconfig && \
+    cd .. && \
+    rmdir  build-wrapper-linux-x86 && \
+    rm *.zip && \
+    rmdir /work
 
 # setup su for dep installation
 RUN sed -i '/pam_rootok.so$/aauth sufficient pam_permit.so' /etc/pam.d/su
