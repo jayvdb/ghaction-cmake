@@ -85,6 +85,9 @@ RUN mkdir $HOME/.sonar/ && \
     unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/ && \
     rm $HOME/.sonar/*.zip
 
+RUN apt-get install -y --no-install-recommends \
+        gcovr
+
 # setup su for dep installation
 RUN sed -i '/pam_rootok.so$/aauth sufficient pam_permit.so' /etc/pam.d/su
 

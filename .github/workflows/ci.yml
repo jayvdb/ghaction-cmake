@@ -53,5 +53,5 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
-          tags: ${{ github.repository }}:0.16-poco-gst-interpipe-sonarwrapper
+          tags: ${{ github.repository }}:0.16-poco-gst-interpipe-sonarwrapper-gcovr
 
