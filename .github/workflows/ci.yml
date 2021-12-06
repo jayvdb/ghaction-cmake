@@ -61,4 +61,4 @@ jobs:
           build-args: BASE=${{ matrix.variant.base }}
           push: true
           platforms: ${{ matrix.variant.platform }}
-          tags: ${{ github.repository }}:0.16-poco
+          tags: ${{ github.repository }}:0.16-poco-gst-interpipe-sonarwrapper
