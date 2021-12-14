@@ -14,8 +14,6 @@ RUN set -e -x; \
         # base system (su)
         util-linux
 
-RUN apt-get install -y --no-install-recommends gcovr
-
 # Used by sonarcloud build wrapper
 RUN apt-get install -y --no-install-recommends \
         unzip
