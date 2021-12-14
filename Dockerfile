@@ -7,8 +7,6 @@ RUN set -e -x; \
     apt-get install -y --no-install-recommends \
         # infra
         ca-certificates python3-yaml \
-        # build
-        gcc g++ \
         # coverage report
         curl \
         # used by clang-format
