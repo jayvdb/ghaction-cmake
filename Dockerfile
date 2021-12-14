@@ -12,24 +12,17 @@ RUN set -e -x; \
         # coverage report
         curl lcov \
         # clang
-        clang clang-tidy clang-format \
-        # C/C++ linters \
-        cppcheck iwyu \
+        clang \
         # used by clang-format
         git \
-        # cpack
-        file dpkg-dev \
         # base system (su)
         util-linux
-
-# ctest -D ExperimentalMemCheck; may not work in all architectures
-RUN apt-get install -y --no-install-recommends valgrind || true
 
 RUN apt-get install -y --no-install-recommends gcovr
 
 # Used by sonarcloud build wrapper
 RUN apt-get install -y --no-install-recommends \
-        wget unzip
+        unzip
 
 ENV SONAR_SCANNER_VERSION=4.2.0.1873 \
     HOME=/root
