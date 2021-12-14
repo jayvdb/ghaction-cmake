@@ -13,6 +13,8 @@ RUN set -e -x; \
         git \
         # needed by sonar-scanner
         libc6-dev-i386 \
+        libgcc-10-dev \
+        cpp \
         # base system (su)
         util-linux
 
