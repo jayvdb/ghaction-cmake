@@ -15,6 +15,7 @@ RUN set -e -x; \
         libc6-dev-i386 \
         libgcc-10-dev \
         cpp \
+        binutils \
         # base system (su)
         util-linux
 
