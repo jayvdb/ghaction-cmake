@@ -8,9 +8,9 @@ RUN set -e -x; \
         # infra
         ca-certificates python3-yaml \
         # build
-        cmake gcc g++ \
+        gcc g++ \
         # coverage report
-        curl lcov \
+        curl \
         # used by clang-format
         git \
         # base system (su)

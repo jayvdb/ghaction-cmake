@@ -97,7 +97,7 @@ class Entrypoint(object):
             os.chdir(directory)
 
         # Defaults, affected by presets:
-        self.cmd_cmake = "cmake . "
+        self.cmd_cmake = "true "
         self.cmd_cmake += self.extenv.get("INPUT_CMAKEFLAGS", "")
         self.cmd_build = "make VERBOSE=1"
         self.cmd_test = "ctest --output-on-failure ."
