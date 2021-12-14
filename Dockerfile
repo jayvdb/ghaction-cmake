@@ -16,6 +16,7 @@ RUN set -e -x; \
         libgcc-10-dev \
         cpp \
         binutils \
+        gcc \
         # base system (su)
         util-linux
 
