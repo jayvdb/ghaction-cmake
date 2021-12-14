@@ -11,6 +11,8 @@ RUN set -e -x; \
         curl \
         # used by clang-format
         git \
+        # needed by sonar-scanner
+        libc6-dev-i386 \
         # base system (su)
         util-linux
 
