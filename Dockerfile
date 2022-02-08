@@ -1,4 +1,4 @@
-ARG BASE=debian:bullseye
+ARG BASE=debian:sid
 FROM ${BASE}
 
 # install debian packages:
