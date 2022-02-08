@@ -40,17 +40,6 @@ RUN apt-get install -y --no-install-recommends \
         build-essential \
         gtk-doc-tools
 
-RUN mkdir /work && \
-    cd /work && \
-    git clone https://github.com/RidgeRun/gst-interpipe.git && \
-    cd gst-interpipe && \
-    git checkout 1.1.7 && \
-    ./autogen.sh --libdir /usr/lib/x86_64-linux-gnu/  && \
-    make && \
-    make check && \
-    make install && \
-    rm -rf /work
-
 # ctest -D ExperimentalMemCheck; may not work in all architectures
 RUN apt-get install -y --no-install-recommends valgrind || true
 
