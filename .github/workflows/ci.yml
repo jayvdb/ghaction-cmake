@@ -43,7 +43,7 @@ jobs:
       matrix:
         variant:
           # Default
-          - base: debian:bullseye
+          - base: debian:sid
             platform: 'linux/amd64'
             label: ''
     steps:
