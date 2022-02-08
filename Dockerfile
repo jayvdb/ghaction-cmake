@@ -30,7 +30,7 @@ RUN apt-get install -y --no-install-recommends \
         libgmock-dev \
         libpcre2-dev  \
         libpoco-dev \
-        libpocofoundation70 \
+        libpocofoundation80 \
         rapidjson-dev
 
 RUN apt-get install -y --no-install-recommends \
