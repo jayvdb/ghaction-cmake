@@ -33,6 +33,7 @@ RUN apt-get install -y --no-install-recommends \
         libpocofoundation80 \
         rapidjson-dev
 
+# gst-interpipe deps
 RUN apt-get install -y --no-install-recommends \
         autoconf \
         automake autotools-dev \
@@ -40,11 +41,22 @@ RUN apt-get install -y --no-install-recommends \
         build-essential \
         gtk-doc-tools
 
+RUN apt-get install -y --no-install-recommends \
+        golang-go && \
+    mkdir /work && \
+    cd /work && \
+    git clone https://github.com/orlangure/gnomock && \
+    cd gnomock && \
+    CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o gnomockd ./cmd/server && \
+    mv gnomockd /usr/sbin/ && \
+    cd / && rm -rf work && \
+    apt-get remove -y golang-go
+
 # ctest -D ExperimentalMemCheck; may not work in all architectures
 RUN apt-get install -y --no-install-recommends valgrind || true
 
 RUN apt-get install -y --no-install-recommends \
-        wget unzip
+        wget unzip daemonize
 
 # The .so must be located beside the bin
 RUN mkdir /work && \
@@ -61,7 +73,7 @@ RUN mkdir /work && \
     rm *.zip && \
     rmdir /work
 
-ENV SONAR_SCANNER_VERSION=4.2.0.1873 \
+ENV SONAR_SCANNER_VERSION=4.6.2.2472 \
     HOME=/root
 
 ENV SONAR_SCANNER_HOME=${HOME}/.sonar/sonar-scanner-${SONAR_SCANNER_VERSION}-linux
