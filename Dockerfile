@@ -56,7 +56,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN apt-get install -y --no-install-recommends valgrind || true
 
 RUN apt-get install -y --no-install-recommends \
-        wget unzip daemonize
+        wget unzip daemonize docker.io
 
 # The .so must be located beside the bin
 RUN mkdir /work && \
