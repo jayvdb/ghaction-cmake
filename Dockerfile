@@ -50,7 +50,7 @@ RUN apt-get install -y --no-install-recommends \
     CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o gnomockd ./cmd/server && \
     mv gnomockd /usr/sbin/ && \
     cd / && rm -rf work && \
-    apt-get remove -y golang-go
+    apt-get remove -y golang-go && apt autoremove
 
 # ctest -D ExperimentalMemCheck; may not work in all architectures
 RUN apt-get install -y --no-install-recommends valgrind || true
