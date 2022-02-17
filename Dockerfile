@@ -24,13 +24,26 @@ RUN set -e -x; \
         util-linux
 
 RUN apt-get install -y --no-install-recommends \
+        gstreamer1.0-libav \
+        gstreamer1.0-plugins-bad \
+        gstreamer1.0-plugins-base \
+        gstreamer1.0-plugins-good \
+        gstreamer1.0-plugins-rtp \
+        gstreamer1.0-rtsp \
+        gstreamer1.0-plugins-ugly \
+        libboost-all-dev \
         libglib2.0-dev \
+        libgstreamer1.0-dev \
+        libgstreamer-plugins-bad1.0-dev \
+        libgstreamer-plugins-base1.0-dev \
         libgstrtspserver-1.0-dev \
         libgtest-dev \
         libgmock-dev \
+        libmongoc-dev \
         libpcre2-dev  \
         libpoco-dev \
         libpocofoundation80 \
+        librdkafka-dev \
         rapidjson-dev
 
 # gst-interpipe deps
