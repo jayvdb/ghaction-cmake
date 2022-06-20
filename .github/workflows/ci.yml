@@ -52,7 +52,7 @@ jobs:
       matrix:
         variant:
           # Default
-          - base: debian:sid
+          - base: ubuntu:jammy
             platform: linux/amd64
             label: -amd64
     steps:
